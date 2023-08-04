@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box {
+            border: 1px solid black;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>추가 및 삭제하기</h1>
+    <button onclick="addAppend()">append로 추가하기</button>
+    <div class="box" id="outerBox">
+    </div>
+    <script>
+        let n = 1;
+        function addAppend() {
+            let newEl = document.createElement("div");
+            newEl.setAttribute("class", "box");
+            newEl.setAttribute("id", "innerBox" + n);
+            newEl.innerHTML = n + `댓글 내용입니다<button onclick="removeBox(${n})">댓글삭제</button>`;
+            let el = document.querySelector("#outerBox");
+            el.append(newEl);
+            n++;
+        }
+        function removeBox(n) {
+            let b1 = document.querySelector("#innerBox" + n);
+            b1.remove();
+        }
+    </script>
+</body>
+
+</html>
