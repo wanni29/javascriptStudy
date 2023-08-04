@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .red-text {
+            color: red;
+        }
+    </style>
+</head>
+
+
+
+
+<body>
+    <div>box1</div>
+    <div>box2</div>
+    <div class="red-text">box3</div>
+    <div class="red-text">box4</div>
+    <div id="box5">box5</div>
+    <hr>
+    <div id="err"></div>
+    <button onclick="tagChange()">태그찾기</button>
+    <button onclick="classChange()">클래스찾기</button>
+    <button onclick="idChange()">아이디찾기</button>
+    <button onclick="err()">에러</button>
+
+
+
+
+
+
+    <script>
+
+        function err() {
+            let errEl = document.querySelector("#err");
+            errEl.innerHTML = "아이디 혹은 비밀번호를 잘못적음";
+        }
+
+        function tagChange() {
+            let tagEl = document.querySelectorAll("div");
+            tagEl[0].textContent = "내용변경";
+            tagEl[1].textContent = "내용변경";
+            tagEl[2].textContent = "내용변경";
+            tagEl[3].textContent = "내용변경";
+            tagEl[4].textContent = "내용변경";
+        }
+
+        function classChange() {
+            let classEl = document.querySelectorAll(".red-text");
+            classEl[0].textContent = "내용변경1";
+            classEl[1].textContent = "내용변경2";
+        }
+
+        function idChange() {
+            let idEl = document.querySelector("#box5");
+            idEl.textContent = "내용변경3";
+        }
+    </script>
+
+
+</body>
+
+</html>
